@@ -11,10 +11,18 @@ e.An additional list of users(ids or email addresses),what was invoiced for each
 
 ## Installation
 
-- After cloning the project please go to the project directory and run command (**composer install**).
+- After cloning the project please go to the project directory and run command 
+```
+composer install
+```
+.
 - Create a database with any name like I used **conversion** and change the parameters in the .env file. like database name, username, host etc.
-- After creating databse import the databse provided in db folder or if you want to create fresh installtion run the following command (**php artisan migrate:fresh --seed**), it'll create fresh db for you with dummy data in the users table, sessions table.
-- now again go to terminal and run the command (**php artisan serve**) it'll give you an ip address with port like http://127.0.0.1:8000. 
+- After creating databse import the databse provided in db folder or if you want to create fresh installtion run the following command 
+```
+php artisan migrate:fresh --seed
+```
+it'll create fresh db for you with dummy data in the users table, sessions table.
+- now again go to terminal and run the command ```php artisan serve``` it'll give you an ip address with port like http://127.0.0.1:8000. 
 
 ## Postman
 
@@ -29,13 +37,19 @@ e.An additional list of users(ids or email addresses),what was invoiced for each
     "customer_id" : "1"
 }
 
-- You'll get the response like **{"invoice_id":1}**
+- You'll get the response like 
+```
+{
+"invoice_id":1
+}
+```
 
 ## Get Invoice
 - URL : http://127.0.0.1:8000/api/invoices/1
 - Method : GET
 - You'll get the response like
-```{
+```
+{
     "id": 1,
     "start_date": "2021-03-01 23:59:59",
     "end_date": "2021-05-01 23:59:59",
@@ -64,4 +78,5 @@ e.An additional list of users(ids or email addresses),what was invoiced for each
             }
         }
     ]
-}```
+}
+```
