@@ -34,8 +34,8 @@ e.An additional list of users(ids or email addresses),what was invoiced for each
 ## Get Invoice
 - URL : http://127.0.0.1:8000/api/invoices/1
 - Method : GET
-- You'll get the response like **{"invoice_id":1}**
-{
+- You'll get the response like
+```{
     "id": 1,
     "start_date": "2021-03-01 23:59:59",
     "end_date": "2021-05-01 23:59:59",
@@ -64,4 +64,4 @@ e.An additional list of users(ids or email addresses),what was invoiced for each
             }
         }
     ]
-}
+}```
