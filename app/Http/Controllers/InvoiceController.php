@@ -6,7 +6,8 @@ use Illuminate\Http\Request;
 use App\Repositories\InvoiceRepositoryInterface;
 use App\Repositories\UserRepositoryInterface;
 use App\Repositories\InvoiceEventRepositoryInterface;
-
+use App\Http\Requests\InvoiceRequest;
+use App\Http\Requests\InvoiceGetRequest;
 class InvoiceController extends Controller
 {
     private $invoiceRepository;
@@ -46,8 +47,9 @@ class InvoiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(InvoiceRequest $request)
     {
+        $request->validated();
         $start_date     = $request->start_date.' 23:59:59';
         $end_date       = $request->end_date.' 23:59:59';
         $customer_id    = $request->customer_id;
@@ -128,8 +130,10 @@ class InvoiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {   $columns = ['*'];
+    public function show(InvoiceGetRequest $request)
+    {   
+        $id = $request->route()->parameter('id');
+        $columns = ['*'];
         $relations= ['events.user'];
         return response()->json($this->invoiceRepository->findById($id,$columns,$relations),200);
     }

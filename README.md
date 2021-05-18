@@ -19,7 +19,7 @@ composer install
 - Create a database with any name like I used **conversion** and change the parameters in the .env file. like database name, username, host etc.
 - After creating databse import the databse provided in db folder or if you want to create fresh installtion run the following command 
 ```
-php artisan migrate:fresh --seed
+php artisan migrate --seed
 ```
 it'll create fresh db for you with dummy data in the users table, sessions table.
 - now again go to terminal and run the command ```php artisan serve``` it'll give you an ip address with port like http://127.0.0.1:8000. 
