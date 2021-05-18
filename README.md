@@ -15,7 +15,6 @@ e.An additional list of users(ids or email addresses),what was invoiced for each
 ```
 composer install
 ```
-.
 - Create a database with any name like I used **conversion** and change the parameters in the .env file. like database name, username, host etc.
 - After creating databse import the databse provided in db folder or if you want to create fresh installtion run the following command 
 ```
@@ -31,12 +30,15 @@ it'll create fresh db for you with dummy data in the users table, sessions table
  open postnam and set parameter as
 - URL : http://127.0.0.1:8000/api/invoices
 - Method : POST
-- Body : {
+- Body : 
+
+```
+{
     "start_date" : "2021-03-01",
     "end_date" : "2021-05-01",
     "customer_id" : "1"
 }
-
+```
 - You'll get the response like 
 ```
 {
